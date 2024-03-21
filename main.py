@@ -14,6 +14,8 @@ def main():
             break
         elif inputMode == 4:
             break
+        elif inputMode == 0:
+            inputStop = True
         
 def manualInput():
     books = []
