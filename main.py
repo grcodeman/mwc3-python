@@ -2,20 +2,23 @@ import pandas as pd
 from book import Book
 
 def main():
-    inputStop = False
+    #create empty data frame 
     df = pd.DataFrame()
+
+    #start input loop
+    inputStop = False
     while inputStop == False:
         inputMode = int(input("Select what you want to do (1 - add a book manually, 2 - import a .csv file, 3 - export csv, 4 - export database): "))
-        if inputMode == 1:
+        if inputMode == 1: #manual input
             bookData = manualInput()
-        elif inputMode == 2:
+        elif inputMode == 2: #input with csv file
             break
-        elif inputMode == 3:
+        elif inputMode == 3: #export csv file
             break
-        elif inputMode == 4:
+        elif inputMode == 4: #export database
             break
-        elif inputMode == 0:
-            inputStop = True
+        elif inputMode == 0: #stop input loop
+            inputStop = True 
         
 def manualInput():
     books = []
