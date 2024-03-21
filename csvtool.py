@@ -5,7 +5,7 @@ import csv
 
 # this file will contain converting csv, updating datafram and then exporting csv
 
-test_csv = pd.DataFrame(columns=["bookID","title","authors","average_rating","isbn","isbn13","language_code", "  num_pages","ratings_count","text_reviews_count","publication_date","publisher"])
+#test_csv = pd.DataFrame(columns=["bookID","title","authors","average_rating","isbn","isbn13","language_code", "  num_pages","ratings_count","text_reviews_count","publication_date","publisher"])
 
 
 # convert csv to dataframe

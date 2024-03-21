@@ -1,36 +1,37 @@
 import pandas as pd
 from book import Book
-from csvtool import *
-
-#this file include the code for input menu and the manual input function, it also import functions from other files for exporting and importing a csv, then export csv to database from another file to run them when needed
+from csvtool import convert_csv, add_row, output_csv
 
 def main():
-    #create empty data frame 
-    df = pd.DataFrame()
-
-    #start input loop
     inputStop = False
+    df = pd.DataFrame(columns=["bookID","title","authors","average_rating","isbn","isbn13","language_code", "num_pages","ratings_count","text_reviews_count","publication_date","publisher"])
     while inputStop == False:
-        inputMode = int(input("Select what you want to do (0 - Stop input, 1 - Add a book manually, 2 - Import a .csv file, 3 - Export csv, 4 - Export database): "))
-        if inputMode == 1: #manual input
-            manualInput()
-        elif inputMode == 2: #input with csv file
+        inputMode = int(input("Select what you want to do (1 - add a book manually, 2 - import a .csv file, 3 - export csv, 4 - export database): "))
+        if inputMode == 1:
+            bookData = manualInput()
+            df = add_row(df, bookData)
+        elif inputMode == 2:
+            df = convert_csv(df, "")
             break
-        elif inputMode == 3: #export csv file
+        elif inputMode == 3:
+            output_csv(df)
+            print("saved to output/test.csv")
             break
-        elif inputMode == 4: #export csv to database
+        elif inputMode == 4:
             break
-        elif inputMode == 0: #stop input loop
-            inputStop = True 
+        elif inputMode == 0:
+            inputStop = True
         
 def manualInput():
-    books = [] #start empty list of book objects
-    bookData = [] #information of a book
+    books = []
     headers = ["book_id","title","authors","average_rating","isbn","isbn13","language_code", "num_pages","ratings_count","text_reviews_count","publication_date","publisher"]
-    for header in headers: #loop through headers list and input information about the book
+    headerData = []
+    for header in headers:
         userInput = input(f"Please input {header}: ")
-        bookData.append(userInput)
-    book = Book(*bookData)  # Unpack headerData to pass individual attributes
-    books.append(book) 
+        headerData.append(userInput)
+    book = Book(*headerData)  # Unpack headerData to pass individual attributes
+
+    return headerData
+
 if __name__ == "__main__":
     main()
