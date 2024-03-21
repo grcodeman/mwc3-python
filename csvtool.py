@@ -3,7 +3,7 @@ import csv
 
 # headers = ["bookID","title","authors","average_rating","isbn","isbn13","language_code", "num_pages","ratings_count","text_reviews_count","publication_date","publisher"]
 
-# this file will contain converting csv, updating datafram and then exporting csv
+# this file will contain converting csv, updating dataframe and then exporting csv
 
 # convert csv to dataframe
 def convert_csv(path):
