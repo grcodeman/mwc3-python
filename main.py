@@ -1,5 +1,8 @@
 import pandas as pd
 from book import Book
+from csvtool import *
+
+#this file include the code for input menu and the manual input function, it also import functions from other files for exporting and importing a csv, then export csv to database from another file to run them when needed
 
 def main():
     #create empty data frame 
@@ -15,7 +18,7 @@ def main():
             break
         elif inputMode == 3: #export csv file
             break
-        elif inputMode == 4: #export database
+        elif inputMode == 4: #export csv to database
             break
         elif inputMode == 0: #stop input loop
             inputStop = True 
