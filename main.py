@@ -8,9 +8,9 @@ def main():
     #start input loop
     inputStop = False
     while inputStop == False:
-        inputMode = int(input("Select what you want to do (1 - add a book manually, 2 - import a .csv file, 3 - export csv, 4 - export database): "))
+        inputMode = int(input("Select what you want to do (0 - Stop input, 1 - Add a book manually, 2 - Import a .csv file, 3 - Export csv, 4 - Export database): "))
         if inputMode == 1: #manual input
-            bookData = manualInput()
+            manualInput()
         elif inputMode == 2: #input with csv file
             break
         elif inputMode == 3: #export csv file
