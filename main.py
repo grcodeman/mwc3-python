@@ -21,14 +21,13 @@ def main():
             inputStop = True 
         
 def manualInput():
-    books = []
+    books = [] #start empty list of book objects
+    bookData = [] #information of a book
     headers = ["book_id","title","authors","average_rating","isbn","isbn13","language_code", "num_pages","ratings_count","text_reviews_count","publication_date","publisher"]
-    headerData = []
-    for header in headers:
+    for header in headers: #loop through headers list and input information about the book
         userInput = input(f"Please input {header}: ")
-        headerData.append(userInput)
-    book = Book(*headerData)  # Unpack headerData to pass individual attributes
-    books.append(book)
-
+        bookData.append(userInput)
+    book = Book(*bookData)  # Unpack headerData to pass individual attributes
+    books.append(book) 
 if __name__ == "__main__":
     main()
